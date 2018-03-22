@@ -22,6 +22,12 @@ def test_test_value_in_sorted_array():
     test_value = 90
     assert binary_search(sorted_array, test_value) == -1
 
+def test_big_test_value_in_sorted_array():
+    """
+    test if test_value in very big sorted_array
+    """
+    assert binary_search(sorted_array(range(10000)), 1000) == 1000
+
 
 def test_test_array():
     """
