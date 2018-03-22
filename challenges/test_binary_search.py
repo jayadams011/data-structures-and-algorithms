@@ -1,34 +1,32 @@
 
 
-import shift-array.pytest
+import binary_search
 
 import pytest
 
 
-def test_shift_array_if_len_odd():
+def test_sorted_array_is_empty():
     """
-    test for if  number of elements is odd
+    test if sorted array is empty
     """
-    old_array = [0, 0, 0]
-    value = 1
-    shift-array()
-    assert old_array[2] == 1
+    sorted_array = []
+    test_value = 2
+    assert binary_search(sorted_array, test_value)
 
 
-def test_shift_array_if_len_even():
+def test_test_value_in_sorted_array():
     """
-    test for if number of elements is even
+    test if test_value in sorted_array
     """
-    old_array = [0, 0, 0, 0]
-    value = 1
-    shift-array()
-    assert old_array[2] == 1
+    sorted_array = [10, 20, 30, 40, 50]
+    test_value = 90
+    assert binary_search(sorted_array, test_value) == -1
 
 
-def test_shift_array_if_is_empty():
+def test_test_array():
     """
-    test for if array is empty
+    test output form test_array
     """
-    old_array = []
-    value = 1
-    assert old_array[0] == 1
+    sorted_array = [10, 20, 30]
+    test_value = 20
+    assert binary_search(sorted_array, test_value) == 1
