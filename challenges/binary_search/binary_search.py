@@ -4,10 +4,10 @@ def binary_search(sorted_array, test_value):
     in sorted_array. If test_value is not in sorted_array, return
     -1 """
     counter = 0
-    if len(sorted_array) = 0:
+    if len(sorted_array) == 0:
         return -1
     else:
-        len(sorted_array > 0 and type(test_value) == int:
+        if len(sorted_array) > 0 and type(test_value) == int():
             for item in sorted_array:
                 print(counter)
                 return counter
@@ -15,5 +15,6 @@ def binary_search(sorted_array, test_value):
                 print(-1)
                 return -1
 
-if__name__=='__main__':
-    binary_search([10, 20, 30, 40, 50, 60] 20)
+
+if __name__ == '__main__':
+    print(binary_search([10, 20, 30, 40, 50, 60], 20))
