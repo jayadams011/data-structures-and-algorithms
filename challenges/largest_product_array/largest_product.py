@@ -3,19 +3,12 @@ def largest_product(arr):
     Write a function which takes a 2D array and returns the largest product of
     2 adjacent values.
     """
-    largest = 0
-
-    if len(arr)
-
-
-
-
-
-
-
-def insertShiftArray(old_array, value):
-    if len(old_array) > 0 and len(old_array) % 2 == 0:
-        middle = len(old_array)//2
-    elif len(old_array) > 0 and len(old_array) % 2 == 1:
-        middle = len(old_array)//2 + 1
-    else:
+    if not arr:
+        return 'empty arr'
+    largest_prod = 0
+    product = 0
+    for index in arr:
+        product = index[0] * index[1]
+        if product > largest_prod:
+            largest_prod = product
+    return largest_prod
