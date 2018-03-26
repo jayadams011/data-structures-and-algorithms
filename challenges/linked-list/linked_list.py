@@ -1,7 +1,7 @@
 from node import Node
 
 
-class SinglyLinkedList:
+class LinkedList:
     """This will be a link list class """
     def __init__(self, iter=[]):
         self._current = None
@@ -17,12 +17,23 @@ for item in reversed(iter):
 
 
 def __repr__(self):
-    return
+    # assuming head will have a val (- need to handle the case of None)
+    return '<head> => {}' .format(self.head.val)
 
 
 def __len__(self):
     return self.size
 
 
+def __str__(self):
+
+
+def find(self, val):
+
+
 def insert(self, val):
-    pass
+    self.head = Node(val, self.head)
+    self._size += 1
+
+
+# still need to handle error handling

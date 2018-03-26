@@ -9,12 +9,10 @@ def binary_search(sorted_array, test_value):
     else:
         if len(sorted_array) > 0 and type(test_value) == int():
             for item in sorted_array:
-                print(counter)
-                return counter
+                print(item)
+                return item
             else:
                 print(-1)
                 return -1
 
-
-if __name__ == '__main__':
-    print(binary_search([10, 20, 30, 40, 50, 60], 20))
+    return(binary_search([10, 20, 30, 40, 50, 60], 20))
