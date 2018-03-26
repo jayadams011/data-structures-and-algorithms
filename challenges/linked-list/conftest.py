@@ -2,13 +2,6 @@ import pytest
 from node import Node
 from linked_list import LinkedList as LL
 
-@pytest.fixture
-def n_node():
-    return Node(1,None)
-
-@pytest.fixture
-def a_node():
-    return Node('a',None)
 
 @pytest.fixture
 def empty_linked_list():
