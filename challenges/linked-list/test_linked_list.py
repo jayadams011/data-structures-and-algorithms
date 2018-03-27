@@ -1,5 +1,5 @@
 import pytest
-from linked_list import linked_list as LL
+from ll_insertions import LinkedList as LL
 
 
 @pytest.fixture
