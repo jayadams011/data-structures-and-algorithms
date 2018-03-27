@@ -54,5 +54,20 @@ def find(self, val);
 def append(self, value):
     """ append vlue at the end of the lsit """
     current = self.head
-    
+    while current._next:
+        current = current._next
+    current._next = Node(value)
 
+def insert_before(self, value, newval):
+    """ insert new node before current """
+    current = self.head
+    while current._next:
+        current = current._next
+    current._next = Node(value)
+
+
+def insert_after(self, value, newval):
+    """ Insert new node after current """
+    current = self.head
+    while current != value:
+        current._next = Node(newval, current._next)
