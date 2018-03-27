@@ -69,19 +69,24 @@ class LinkedList:
         """ Insert new node after current """
         if self._size == 0:
             return 'Linked List is Empty'
-        previous_node = self.head
-        self.head = Node(newVal, previous_node)
-        return self
-        if previous_node._next:
-            x = previous_node._next
-            while x:
-                if x.val == val:
-                    print('x', x)
-                    new_insert = Node(newVal, x)
-                    previous_node._next = new_insert
-                    self._size += 1
-                    print('length => {}'.format(self._len__()))
-                    return self
-                previous_node = x
-                x = x._next
+        node = self.head
+        while node:
+            if node.val == val:
+                print('Node.val => {}'.format(node.val))
+                newNode = Node(newVal, node._next)
+                node._next = newNode
+                self._size += 1
+                return
+            node = node._next
         return 'did not insert'
+
+        def kthFromEnd(self, value):
+            """ find node (k) from end """
+            current = self.head
+            if len(self) - 1 < value or value < 0:
+                print('Exception')
+                return False
+            else:
+                for item in range(value - 1):
+                    current = current._next
+            return current
