@@ -80,13 +80,15 @@ class LinkedList:
             node = node._next
         return 'did not insert'
 
-        def kthFromEnd(self, value):
+        def kthFromEnd(self, k):
             """ find node (k) from end """
-            current = self.head
-            if len(self) - 1 < value or value < 0:
-                print('Exception')
-                return False
-            else:
-                for item in range(value - 1):
-                    current = current._next
-            return current
+            x = self._size - (k-1)
+            node = self.head
+            counter = 0 
+            while node:
+                if counter == x:
+                    return node
+                counter += 1
+                node = node._next
+            raise IndexError('Requested node outside link list length')
+            

@@ -10,3 +10,6 @@ def empty_ll():
 @pytest.fixture
 def small_ll():
     return LL([1, 2, 3, 4])
+
+@pytest.fixture
+def 
