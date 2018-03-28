@@ -1,5 +1,4 @@
 import pytest
-from node import Node
 from linked_list import LinkedList as LL
 
 
@@ -26,3 +25,7 @@ def linked_list_dict():
 @pytest.fixture
 def linked_list_tuple():
     return LL((1, 2, 3))
+
+@pytest.fixture
+def test_kthFromEnd_emp():
+    return LL()
