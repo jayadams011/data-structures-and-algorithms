@@ -7,18 +7,22 @@ from linked_list import LinkedList as LL
 def empty_linked_list():
     return LL()
 
+
 @pytest.fixture
 def n_linked_list_list():
-    return LL([1,2,3])
+    return LL([1, 2, 3])
+
 
 @pytest.fixture
 def m_linked_list_list():
-    return LL([1,'b',2,'d'])
+    return LL([1, 'b', 2, 'd'])
+
 
 @pytest.fixture
 def linked_list_dict():
-    return LL({'a':1,'b':2,'c':3})
+    return LL({'a': 1, 'b': 2, 'c': 3})
+
 
 @pytest.fixture
 def linked_list_tuple():
-    return LL((1,2,3))
+    return LL((1, 2, 3))

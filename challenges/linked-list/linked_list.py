@@ -84,7 +84,7 @@ class LinkedList:
             """ find node (k) from end """
             x = self._size - (k-1)
             node = self.head
-            counter = 0 
+            counter = 0
             while node:
                 if counter == x:
                     return node
