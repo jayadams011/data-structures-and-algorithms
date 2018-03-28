@@ -7,7 +7,7 @@ class LinkedList:
         self.head = None
         self._len = 0
 
-        for item in iter:
+        for item in reversed(iter):
             self.head = Node(item, self.head)
             self._len += 1
 
@@ -19,7 +19,7 @@ class LinkedList:
         """ return all items from the LL """
         lis = []
         current = self.head
-        for _ in range(self._len+1):
+        while current:
             lis.append(current)
             current = current._next
         return str(lis)
@@ -80,15 +80,27 @@ class LinkedList:
             node = node._next
         return 'did not insert'
 
-        def kthFromEnd(self, k):
-            """ find node (k) from end """
-            x = self._size - (k-1)
-            node = self.head
-            counter = 0
-            while node:
-                if counter == x:
-                    return node
-                counter += 1
-                node = node._next
-            raise IndexError('Requested node outside link list length')
-            
+    def kthFromEnd(self, k):
+        """ find node (k) from end """
+        x = self._size - (k-1)
+        node = self.head
+        counter = 0
+        while node:
+            if counter == x:
+                return node
+            counter += 1
+            node = node._next
+        raise IndexError('Requested node outside link list length')
+
+
+def mergeLists(xlist, ylist):
+    """ take two lists and zip them into one """
+    node = x = xlist.head
+    if not x:
+        xlist.head = ylist.head
+        return ylist.head
+    y = ylist.head
+    while x and y:
+        x._next, y = y, x._next
+        x = x._next
+    return node
