@@ -13,6 +13,13 @@ def n_linked_ll():
 
 
 @pytest.fixture
+def has_loop_ll():
+    ll_loop = LL([1, 2, 3, 4, 5])
+    ll_loop.head._next._next._next._next._next = ll_loop.head._next._next
+    return ll_loop
+
+
+@pytest.fixture
 def m_linked_ll():
     return LL([1, 'b', 2, 'd'])
 

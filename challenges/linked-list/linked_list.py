@@ -92,6 +92,19 @@ class LinkedList:
             node = node._next
         raise IndexError('Requested node outside link list length')
 
+    def hasLoop(self):
+        node1 = self.head
+        node2 = self.head
+
+        while node2:
+            node1 = node1._next
+            node2 = node2._next
+            if node2:
+                node2 = node2._next
+            if node1 is node2:
+                return True
+        return False
+
 
 def mergeLists(xlist, ylist):
     """ take two lists and zip them into one """
