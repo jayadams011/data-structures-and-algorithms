@@ -2,17 +2,16 @@ from .node import Node
 
 
 class Stack:
+    """ created class.  Init class"""
     def __init__(self, iterable=[]):
         self.top = None
-        self.len = 0 
-
+        self.len = 0
+    """define magics """
     def __len__(self):
         return self.len
 
     def __str__(self):
         pass
-
-    # define out magics here
 
     def push(self, val):
         """ push adds one item to the top of the stack"""

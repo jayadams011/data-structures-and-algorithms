@@ -3,6 +3,7 @@ from .node import Node
 
 class Queue:
     def __init__(self, iterable=[]):
+        """ testing for an empty queue"""
         self.front = None
         self.back = None
         self._len = 0
@@ -33,7 +34,7 @@ class Queue:
             self.back = node
         self._len += 1
         return self.back.val, self.front.val
-        
+
     def dequeue(self):
         """ removes an item form the queue like pop """
         if len(self) == 0:
@@ -43,5 +44,3 @@ class Queue:
             current = self.front
             self.front = current._next
             return current
-
-
