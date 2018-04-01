@@ -23,5 +23,9 @@ Python 3.6.4
 None
 
 ## Change log
-
+ffe5c67 (HEAD -> stack-queue) cleaned things up. fixed readme.
+3e402d1 added readme
+3982dce cleaned up code
+a84e398 add code
+d4c6e5c created tree and added first code
 
