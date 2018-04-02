@@ -1,20 +1,34 @@
-# from node import Node
+import data-structures.stack.stack.py
 
 
-class Queue(val):
-    """ class for Queue """
-    def __init__(self):
-        self.stack1 = []
-        self.stack2 = []
+class Queue:
+    """class for Queue"""
+    def __init__(self, iter=[]):
+        self.stack1 = stack()
+        self.stack2 = stack()
+        self._len = 0
 
-    """ implement stacks with push and pop function create empty stacks """
-    """ implement enqueue method by using only stacks """
-    def enqueue(self, ele):
-        self.stack1.append(ele)
-    """ implement dequeue method by pushing all elements from stack 1 into
-     stack 2, which reverses the order and then popping from stack 2 """
+        for item in iter:
+            self.enqueue(item)
+
+    def enqueue(self, val):
+        """add new iten to the queue"""
+        if val:
+            self.stack1.push(val)
+            self._len += 1
+            return self.stack1
+
+        return False
+
     def dequeue(self):
-        if not self.stack2:
-            while self.stack1:
-                self.stack2.append(self.stack1.pop())
-        return self.stack2.pop()
+        """remove item from the front"""
+        if self._len == 0:
+            return False
+        else:
+            for _ in range(self._len - 2):
+                self.stack2.push(self.stack1.pop())
+            last = self.stack1.pop()
+            for _ in range(self._len - 2):
+                self.stack1.push(self.stack2.pop())
+            self._len -= 1
+            return last
