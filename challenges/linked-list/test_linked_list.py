@@ -39,9 +39,7 @@ def test_ll_loop_e(empty_ll):
 #     """ test if insert a 1 works """
 #     ll.insert_before(2, 10)
 #     assert linked_list_insert == '1102'
-
-
-    # # ll.insert(1)
+# # ll.insert(1)
     # ll.insert(3)
     # ll.insert(6)
     # ll.insert(9)
