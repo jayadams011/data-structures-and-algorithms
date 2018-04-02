@@ -46,36 +46,35 @@ class LinkedList:
 
     def insert_before(self, val, newVal):
         """ insert new node before current """
-        if self._size == 0:
+        if self._len == 0:
             return 'Linked List is Empty'
         previous_node = self.head
-        self.head = Node(newVal, previous_node)
-        return self
+        # cur = self.head
+        # self.head = Node(newVal, previous_node)
+        # return self
         if previous_node._next:
-            x = previous_node._next
-            while x:
-                if x.val == val:
-                    print('x', x)
-                    new_insert = Node(newVal, x)
+            cur = previous_node._next
+            while cur:
+                if cur.val == val:
+                    new_insert = Node(newVal, cur)
                     previous_node._next = new_insert
-                    self._size += 1
-                    print('length => {}'.format(self.__len__()))
+                    self._len += 1
+                    # print('length => {}'.format(self.__len__()))
                     return self
-                previous_node = x
-                x = x._next
+                previous_node = cur
+                cur = cur._next
         return 'did not insert'
 
     def insert_after(self, val, newVal):
         """ Insert new node after current """
-        if self._size == 0:
+        if self._len == 0:
             return 'Linked List is Empty'
         node = self.head
         while node:
             if node.val == val:
-                print('Node.val => {}'.format(node.val))
                 newNode = Node(newVal, node._next)
                 node._next = newNode
-                self._size += 1
+                self._len += 1
                 return
             node = node._next
         return 'did not insert'
@@ -117,3 +116,7 @@ def mergeLists(xlist, ylist):
         x._next, y = y, x._next
         x = x._next
     return node
+
+
+if __name__ == '__main__':
+    ll = LinkedList()

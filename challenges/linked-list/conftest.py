@@ -42,3 +42,8 @@ def test_kthFromEnd_emp():
 @pytest.fixture
 def linked_list_zip():
     return LL((9, 8, 7, 6))
+
+
+@pytest.fixture
+def linked_list_insert():
+    return LL[(6, 8)]
