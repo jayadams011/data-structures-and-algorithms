@@ -56,7 +56,6 @@ class LinkedList:
             cur = previous_node._next
             while cur:
                 if cur.val == val:
-                    # print('x', x)
                     new_insert = Node(newVal, cur)
                     previous_node._next = new_insert
                     self._len += 1
@@ -73,7 +72,6 @@ class LinkedList:
         node = self.head
         while node:
             if node.val == val:
-                # print('Node.val => ', str(node.val))
                 newNode = Node(newVal, node._next)
                 node._next = newNode
                 self._len += 1
@@ -122,13 +120,3 @@ def mergeLists(xlist, ylist):
 
 if __name__ == '__main__':
     ll = LinkedList()
-
-    ll.insert(1)
-    ll.insert(3)
-    ll.insert(6)
-    ll.insert(9)
-    print(ll.head.val)
-    print(ll.__str__())
-    ll.insert_before(6, 8)
-    ll.insert_after(3, 5)
-    print(ll.__str__())
