@@ -28,9 +28,7 @@ def test_pop_take_val(empty_stack):
         empty_stack.pop()
 
 
-# def test_small_pop(small_stack, empty_stack):
-#   """ test if top after pop is current """
-#  assert small_stack.pop() is current
+
 
 
 def test_peek_val_empty(small_stack, empty_stack):
