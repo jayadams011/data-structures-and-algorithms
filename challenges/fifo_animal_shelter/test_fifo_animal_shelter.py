@@ -1,11 +1,22 @@
 
-#   AnimalShelter()
-# enqueue(’kdog’, ’dog’)
-# enqueue(’dante’, ’dog’)
-# enqueue(’laz’, ’cat’)
-# enqueue(’maggie’, ’cat’)
+
+# def enqueue
+
+# @pytest.fixture
+# def aniDogDante():
+#     x = AS([kdog,dog])
+#     return x
 
 
-# dequeueAny();  // should return "kdog"
-# dequeueCat();  // should return "maggie"
-# dequeueDog();  // should return "dante"
+# @pytest.fixture
+# def aniCatMaggie():
+#     y = AS([maggie, cat])
+#     return y
+# def dequeuePrefDog
+# should return "dante, dog"
+
+# def dequeuePrefCat
+# should return "maggie, cat"
+
+# def dequeueNoPref
+# should return "kdog, dog"

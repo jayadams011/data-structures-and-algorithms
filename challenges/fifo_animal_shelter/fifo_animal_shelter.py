@@ -1,4 +1,4 @@
-class AnimalShelter(object):
+class AnimalShelter():
 
     def __init__(self):
         self.headCat = None
@@ -63,18 +63,6 @@ class AnimalShelter(object):
                 return self.dequeueCat()
         else:
             return ('No Animals!')
-
-    def _print(self):
-        print('Cats:')
-        cats = self.headCat
-    while cats:
-        print(cats.animalName, cats.animalType)
-        cats = cats.pointer
-        print('Dogs:')
-        dogs = self.headDog
-    while dogs:
-        print(dogs.animalName, dogs.animalType)
-        dogs = dogs.pointer
 
 
 if __name__ == '__main__':
