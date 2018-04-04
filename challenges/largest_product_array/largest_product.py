@@ -21,12 +21,12 @@ def largest_product(arr):
             return largest
 
         def adjacent_products(arr1, arr2, largest):
-            """" tests next level down arrays agains largest """
+            """" tests next level down arrays againts largest """
             temp1 = arr1[0] * arr2[0]
             temp2 = arr1[1] * arr2[1]
             if temp1 > largest and temp1 > temp2:
                 return temp1
-            elif temp2 > largest and temp 2 > temp1:
+            elif temp2 > largest and temp2 > temp1:
                 return temp2
             return largest
 
@@ -37,5 +37,5 @@ def largest_product(arr):
         return largest_product_array(arr[0], largest)
     for i in range(len(arr) - 1):
         largest = largest_product_array(arr[i], largest)
-        largest = adjacent_products([i]), length)
-            return largest
+        largest = adjacent_products([i], length)
+        return largest
