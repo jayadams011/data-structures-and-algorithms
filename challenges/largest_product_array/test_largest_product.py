@@ -1,5 +1,4 @@
-import largest_product.py
-
+from largest_product.py import largest_product
 import pytest
 
 
