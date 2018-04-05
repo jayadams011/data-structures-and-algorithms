@@ -14,8 +14,8 @@ def multi_bracket_validation(input):
             elif brac in closed_b:
                 if compare.top is None:
                     return False
-                if closed_b.index(brac) != open_b.index(compare.pop()):
+                if closed_b.index(brac) != open_b.index(compare.pop().val):
                     return False
-                return compare.top is None
+        return compare.top is None
 
     return False

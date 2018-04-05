@@ -1,4 +1,4 @@
-# Multi Bracke Validation
+# Multi Bracket Validation
 
 **Author** : Jay Adams
 **Version**: 0.1.0
@@ -23,7 +23,8 @@ C#: your methods outside of Main() in your Program.cs file
 JavaScript: a file called multi-bracket-validation.js
 Python: a file called multi_bracket_validation.py
 
-
+## Assets
+data-structures-and-algorithms/assets/Multi Bracket Validation.jpg
 
 
 ## Architechture

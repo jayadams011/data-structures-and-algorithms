@@ -15,24 +15,15 @@ class Stack:
 
     def push(self, val):
         """ push adds one item to the top of the stack"""
-
-        node = Node(val)
+        self.top = Node(val, self.top)
         self.len += 1
-
-        node._next = self.top
-        self.top = node
-
-        return self.top
 
     def pop(self):
         """ pop removes the first itme in the stack """
-        if self.top is None:
-            raise IndexError('Stack is empty')
-        self._len -= 1
-        node = self.top
+        curr = self.top
         self.top = self.top._next
-
-        return node.val
+        self.len -= 1
+        return curr
 
     def peek(self):
         """ Peek returns the value of what is at the end pass """
