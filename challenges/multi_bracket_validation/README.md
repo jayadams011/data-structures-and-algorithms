@@ -34,3 +34,6 @@ Python 3.6.4
 None
 
 ## Change log
+eb6656d (HEAD -> multi-bracket-validation) debug and run test.  Update README.md
+7739971 added code and one test
+1b8f5e1 (origin/master, origin/HEAD, master) Merge pull request #16 from jayadams011/fifo-animal-shelter
