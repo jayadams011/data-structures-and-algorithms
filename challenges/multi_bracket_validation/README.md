@@ -24,7 +24,7 @@ JavaScript: a file called multi-bracket-validation.js
 Python: a file called multi_bracket_validation.py
 
 ## Assets
-![pseudocode](data-structures-and-algorithms/assets/multi_bracket_validation.jpg)
+![pseudocode](../../assets/multi_bracket_validation.jpg)
 
 
 
