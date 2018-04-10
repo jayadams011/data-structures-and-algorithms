@@ -3,7 +3,7 @@
 **Version**: 0.1.0
 
 ## Overview
-Travrese a BST using inorder, postorder and preorder methods. 
+Travrese a BST using inorder, look for vals 5% 3% or both. replace val with new fizz, buzz or fizzbuzz 
 
 
 ## Getting Started
@@ -23,7 +23,7 @@ env/bin/pip install -e ".[testing]"
 
 
 ## Assets
-none
+data-structures-and-algorithms/assets/fizzbuzztree.jpg
 
 ## Architechture
 Python 3.6.4
