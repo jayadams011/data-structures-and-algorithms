@@ -21,3 +21,7 @@ def test_val_in_array(sorted_array, test_value, low, high):
     test_value = 60
     assert binary_search.sub_binary_search(sorted_array, test_value,
                                            low, high) == -1
+
+    t = Node(1, Node(2, Node(4, Node(7))), Node(3, Node(5), Node(6)))
+
+breadth_search_tree(t)
