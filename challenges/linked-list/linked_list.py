@@ -2,93 +2,139 @@ from node import Node
 
 
 class LinkedList:
-    """ class for new linked list """
+    """class for a new linked list"""
     def __init__(self, iter=[]):
         self.head = None
         self._len = 0
 
         for item in iter:
-            self.head = Node(item, self.head)
-            self._len += 1
+            self.head = self.insert(item)
 
     def __len__(self):
-        """ return len of the current object """
+        """return len of the current object"""
         return self._len
 
     def __str__(self):
-        """ return all items from the LL """
-        lis = []
+        """return all items from the LL"""
+        lis = ''
         current = self.head
-        for _ in range(self._len+1):
-            lis.append(current)
+        while current:
+            lis += str(current.val) + ' '
             current = current._next
-        return str(lis)
+        return lis
 
     def insert(self, val):
-        """ add item to LL """
-        self.head = Node(val, self.head)
+        """add item to the LL"""
+        node = Node(val, self.head)
+        self.head = node
         self._len += 1
+        return self.head
 
     def find(self, val):
-        """ search for element and return TRUE or False"""
-        x = self.head
-        while x is not None:
-            if x == val:
-                return True
+        """search for element and return True or false"""
+        if self.head is None:
             return False
+        elif self.head == val:
+            return True
+        else:
+            current = self.head
+        while current:
+            if val == current:
+                return True
+            current = current._next
+        return False
 
     def append(self, value):
-        """ append vlue at the end of the lsit """
+        """append value at the end of the list"""
         current = self.head
         while current._next:
             current = current._next
         current._next = Node(value)
 
-    def insert_before(self, val, newVal):
-        """ insert new node before current """
-        if self._size == 0:
-            return 'Linked List is Empty'
-        previous_node = self.head
-        self.head = Node(newVal, previous_node)
-        return self
-        if previous_node._next:
-            x = previous_node._next
-            while x:
-                if x.val == val:
-                    print('x', x)
-                    new_insert = Node(newVal, x)
-                    previous_node._next = new_insert
-                    self._size += 1
-                    print('length => {}'.format(self.__len__()))
-                    return self
-                previous_node = x
-                x = x._next
-        return 'did not insert'
+        self._len += 1
 
-    def insert_after(self, val, newVal):
-        """ Insert new node after current """
-        if self._size == 0:
-            return 'Linked List is Empty'
+    def insert_before(self, value, newval):
+        """insert new node before correct"""
+        if self.head is not None:
+            current = self.head
+            if self.head == value:
+                self.head = Node(newval, self.head)
+            while current._next:
+                current = current._next
+                if current.val == value:
+                    nxt = current._next
+                    current._next = Node(newval, nxt)
+                    self._len += 1
+                else:
+                    return False
+        else:
+            self.head = Node(newval)
+            self._len += 1
+        return self.__str__
+
+    def insert_after(self, value, newval):
+        """insert new node after correct"""
+        print(str(self))
+        if self.head is not None:
+            current = self.head
+            if self.head.val == value:
+                self.head._next = Node(newval, current._next)
+                return True
+            while current._next:
+                current = current._next
+                if current.val == value:
+                    nxt = current._next
+                    current._next = Node(newval, nxt)
+                    self._len += 1
+                else:
+                    return False
+        else:
+            self.head = Node(newval)
+            self._len += 1
+        return self.__str__
+
+    def ll_kth_from_end(self, k):
+        """ find node (k) from end """
+        if k < 0 or self._len - k < 0:
+            return False
+        x = self._len - (k-1)
         node = self.head
+        counter = 0
         while node:
-            if node.val == val:
-                print('Node.val => {}'.format(node.val))
-                newNode = Node(newVal, node._next)
-                node._next = newNode
-                self._size += 1
-                return
+            if counter == x:
+                return node
+            counter += 1
             node = node._next
-        return 'did not insert'
+            return node
 
-        def kthFromEnd(self, k):
-            """ find node (k) from end """
-            x = self._size - (k-1)
-            node = self.head
-            counter = 0
-            while node:
-                if counter == x:
-                    return node
-                counter += 1
-                node = node._next
-            raise IndexError('Requested node outside link list length')
-            
+    def has_loop(self):
+        """mrthod will test for the loop inside LL"""
+        if self.head is None:
+            return False
+        if self.head._next is self.head:
+            return True
+        slow = self.head
+        fast = self.head
+        while fast is not None:
+            slow = slow._next
+            fast = fast._next._next
+            if slow is fast:
+                return True
+            return False
+
+
+def merge_lists(list1, list2):
+    """merge two linked list"""
+    if len(list1) == 0:
+        return list2.head
+    elif len(list2) == 0:
+        return list1.head
+    else:
+        current_1 = list1.head
+        current_2 = list2.head
+        current_3 = current_2._next
+        while current_1 and current_2:
+            current_2 = current_3
+            current_1._next, current_2._next = current_2, current_1._next
+            current_1 = current_1._next
+        return list1.head
