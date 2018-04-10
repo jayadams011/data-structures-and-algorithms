@@ -4,7 +4,7 @@ from .stack import Stack
 def multi_bracket_validation(input):
     """ test for matching brackets and return bool """
     if type(input) is str:
-        open_b = '({]'
+        open_b = '({['
         closed_b = ')}]'
         compare = Stack()
 
