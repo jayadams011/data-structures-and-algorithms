@@ -1,5 +1,4 @@
 
-
 def test_enqueue(empty_qu):
     """ test if empty add """
     empty_qu.enqueue(1)
@@ -27,6 +26,3 @@ def test_emp_enqueue(empty_qu):
     empty_qu.enqueue(5)
     assert empty_qu.front.val == 10
     assert empty_qu.back.val == 5
-        
-
-

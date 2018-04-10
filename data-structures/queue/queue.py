@@ -2,45 +2,44 @@ from .node import Node
 
 
 class Queue:
-    def __init__(self, iterable=[]):
-        """ testing for an empty queue"""
+    """class for Queue"""
+    def __init__(self, iter=[]):
         self.front = None
         self.back = None
         self._len = 0
 
-        for item in iterable:
+        for item in iter:
             self.enqueue(item)
-
+    
     def __len__(self):
-        """ return the length of the queue """
+        """return len of the corrent object"""
         return self._len
-
+    
     def __str__(self):
-        """ return the items in the queue """
-        string = ""
+        """return items in queue"""
+        st = ""
         current = self.front
-        for _ in range(self._len):
-            string += str(current.val) + " "
+        while current:
+            st += str(current.val) + " "
             current = current._next
-        return string.rstrip()
-
+        return st.rstrip()
+    
     def enqueue(self, val):
-        """ adds to a queue much like push """
+        """add new iten to the queue"""
         node = Node(val)
-        if self._len == 0:
-            self.back = node
+        if len(self) == 0:
             self.front = node
+            self.back = node
         else:
             self.back = node
         self._len += 1
-        return self.back.val, self.front.val
 
     def dequeue(self):
-        """ removes an item form the queue like pop """
+        """remove item from the front"""
         if len(self) == 0:
             return False
-            raise IndexError('Queue is empty')
         else:
             current = self.front
             self.front = current._next
+            self._len -= 1
             return current
