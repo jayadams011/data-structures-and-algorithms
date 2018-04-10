@@ -35,11 +35,9 @@ Pytest
 None
 
 ## Change log
-99f259e (HEAD -> bst) fixed pre in and po
-st.  added tests.
-2f6d2cb fixed bugs.  added comments
-26596f7 added pre_order, post_order and i
-n_order.  Also added insert.
-da3e2ba added scaffold.  added bst.py, no
-de.py, readme, and test_bst.py.  added so
-me coe
+fffa518 (HEAD -> FizzBuzzTree) added pic
+50700e2 added pic.  updated readme
+7d07bf3 added code and test
+0266897 add scaffold.  add add fizz buzz stuff. Needs test
+1b38d88 (origin/master, origin/HEAD, master, bst) Merge pull request #21 from jayadams011/bst
+bb93172 (origin/bst) f
