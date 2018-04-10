@@ -1,4 +1,4 @@
-# BST
+# FizzBuzzTree
 **Author** : Jay Adams
 **Version**: 0.1.0
 

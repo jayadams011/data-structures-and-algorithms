@@ -1,10 +1,11 @@
-from bst import BST
+from .bst import BST
 
 
 def fizzbuzz(BST):
     # import pdb; pdb.set_trace()
     """ traveres and returns values in order"""
     def _walk(node=None):
+        # import pdb; pdb.set_trace()
         if node is None:
             return False
         current = node
@@ -14,7 +15,6 @@ def fizzbuzz(BST):
 
         if current.left:
             _walk(current.left)
-        operation(current.val)
         x = current.val
         if x % 3 == 0 and x % 5 == 0:
             current.val == ('fizzbuzz')
@@ -25,6 +25,6 @@ def fizzbuzz(BST):
         if current.right:
             _walk(current.right)
 
-    _walk(self.root)
+    _walk(BST.root)
 
     return BST
