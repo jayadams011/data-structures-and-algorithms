@@ -1,9 +1,11 @@
-class Node(object):
-    def __init__(self, animalName=None, animalKind=None, pointer=None):
-        self.animalName = animalName
-        self.animalKind = animalKind
-        self.pointer = pointer
-        self.timestamp = 0
+class Node:
+    def __init__(self, val, next=None):
+        """new node"""
+        self.val = val
+        self.next = next
 
     def __repr__(self):
+        return 'Node value: {}'.format(self.val)
+
+    def __str__(self):
         return self.val
