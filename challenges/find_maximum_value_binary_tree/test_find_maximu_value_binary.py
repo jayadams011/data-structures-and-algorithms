@@ -1,4 +1,5 @@
 from .bst import BST
+import pytest
 
 
 def test_empty_bst_length(new_bst):
