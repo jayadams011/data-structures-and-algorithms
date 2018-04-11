@@ -13,7 +13,8 @@ enqueue(value) which inserts value into the Queue using a first-in, first-out ap
 dequeue() which extracts a value from the Queue using a first-in, first-out approach.
 You have access to 2 Stack instances with push and pop methods.
 
-
+##assets
+![pseudocode](../../assets/queues-with-stacks.jpg)
 
 
 ## Architechture
