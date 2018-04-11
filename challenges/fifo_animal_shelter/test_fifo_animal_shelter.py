@@ -1,22 +1,63 @@
+import pytest
+
+from .fifo_animal_shelter import AnimalShelter as animal
 
 
-# def enqueue
-
-# @pytest.fixture
-# def aniDogDante():
-#     x = AS([kdog,dog])
-#     return x
+@pytest.fixture
+def empty_dog_q():
+    return animal()
 
 
-# @pytest.fixture
-# def aniCatMaggie():
-#     y = AS([maggie, cat])
-#     return y
-# def dequeuePrefDog
-# should return "dante, dog"
+@pytest.fixture
+def dog_q():
+    return animal(['dog', 'dog', 'dog', 'dog', 'dog'])
 
-# def dequeuePrefCat
-# should return "maggie, cat"
 
-# def dequeueNoPref
-# should return "kdog, dog"
+@pytest.fixture
+def cat_q():
+    return animal(['cat', 'cat', 'cat', 'cat', 'cat', 'cat'])
+
+
+@pytest.fixture
+def mix_q():
+    return animal(['cat', 'dog', 'cat',
+                   'dog', 'cat', 'cat', 'dog', 'cat', 'dog'])
+
+
+def test_contsructor():
+    """test constructor"""
+    ne = animal()
+    assert ne.newest is None
+    assert ne.oldest is None
+
+
+def test_enqueue(dog_q):
+    """test enqueue"""
+    dog_q.enqueue('cat')
+    assert dog_q.newest.val == 'cat'
+    assert dog_q._len == 6
+
+
+def test_empty_dog_q(empty_dog_q):
+    """test dequeue"""
+    empty_dog_q.enqueue('cat')
+    assert empty_dog_q._len == 1
+    assert empty_dog_q.newest.val and empty_dog_q.oldest.val == 'cat'
+
+
+def test_dequeue(empty_dog_q):
+    """test dequeu from the empty q"""
+    assert empty_dog_q.dequeue() is False
+
+
+def test_dequeue_not_in_Queue(cat_q, dog_q):
+    """test dequeue if item not in """
+    assert cat_q.dequeue('dog') is False
+    assert dog_q.dequeue('cat') is False
+
+
+def test_mix_q_dog(mix_q):
+    mix_q.dequeue('dog')
+    assert mix_q._len == 8
+    mix_q.dequeue()
+    assert mix_q._len == 7

@@ -9,7 +9,8 @@ Create a class called AnimalShelter which holds only dogs and cats. The shelter 
 ## Getting Started
 Load the env.  at prompt run python3 fifo_animal_shelter.py
 
-
+# assets
+![pseudocode](../../assets/fifo_animal_shelter.jpg)
 
 
 ## Architechture
