@@ -25,11 +25,6 @@ Pytest
 None
 
 ## Change log
-99f259e (HEAD -> bst) fixed pre in and po
-st.  added tests.
-2f6d2cb fixed bugs.  added comments
-26596f7 added pre_order, post_order and i
-n_order.  Also added insert.
-da3e2ba added scaffold.  added bst.py, no
-de.py, readme, and test_bst.py.  added so
-me coe
+12cad78 (HEAD -> find-maximum-value-binary-tree) added pic and updated readme
+992f3fb scaffold and initial code. Still needs testing
+b03d3f3 (master) Merge branch 'master' of https://github.com/jayadams011/data-structures-and-algorithms
