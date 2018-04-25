@@ -12,6 +12,8 @@ Create a new branch in your data-structures-and-algorithms repository called sta
 
 Create a directories: Stack, with all of your standard module configuration for each directory
 
+
+
 __init__.py, README.md, etc.
 Create two files in each called node.py and  stack.py respectively
 
