@@ -10,6 +10,9 @@ It can be cloned from [https://github.com/jayadams011/data-structures-and-algori
 Implementations for common computer science data structures, and solutions to
 whiteboard questions in Psuedocode and Python3.
 
+## assets
+![pseudocode](../../assets/ll-has-loop.jpg)
+
 ## Installation
 
 Each linked project in the TOC is designed to be tested in an isolated

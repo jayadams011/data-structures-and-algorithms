@@ -72,6 +72,7 @@ class LinkedList:
         node = self.head
         while node:
             if node.val == val:
+
                 newNode = Node(newVal, node._next)
                 node._next = newNode
                 self._len += 1

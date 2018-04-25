@@ -46,4 +46,4 @@ def linked_list_zip():
 
 @pytest.fixture
 def linked_list_insert():
-    return LL[(6, 8)]
+    return LL[(1, 2)]
