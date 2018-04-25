@@ -1,5 +1,6 @@
 class Queue:
     def __init__(self, iterable=[]):
+        """ class init """
         self.back = None
         self.front = None
         self._len = 0
@@ -21,6 +22,7 @@ class Queue:
         return lis.rstrip()
 
     def enqueue(self, val):
+        """ queues insert """
         node = Node(val)
         if self._len == 0:
             self.front = self.back = node
@@ -32,6 +34,7 @@ class Queue:
         return node
 
     def dequeue(self):
+        """ queues pop """
         if self._len == 0:
             return False
         temp = self.front
