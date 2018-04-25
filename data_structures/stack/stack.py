@@ -8,9 +8,11 @@ class Stack:
         self.len = 0
     """define magics """
     def __len__(self):
+        """ for determining the len of self """
         return self.len
 
     def __str__(self):
+    """ returns a string output """
         pass
 
     def push(self, val):

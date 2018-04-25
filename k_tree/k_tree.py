@@ -75,4 +75,8 @@ class Ktree:
             return
         if self.root.val == parent or parent is None:
             self.root.children.append(node)
+<<<<<<< HEAD
             return
+=======
+            return
+>>>>>>> master
