@@ -6,40 +6,24 @@ from linked_list import LinkedList
 class HashTable:
     """HashTable class."""
 
-    def __init__(self, max_size=1024):
-        """Initailizer."""
+
+def __init__(self, max_size=1024):
+        """Hash Table init."""
         self.max_size = max_size
-        self.buckets = [None] * self.max_size
+        self.buckets = [LinkedList() for _ in range(max_size)]
 
-    def hash_key(self, key):
-        """Set up the key."""
-        if type(key) is not str:
-            raise TypeError
 
-        # iterate through key, and convert each char to ascii char code
-        # sum all char codes for a total int value
-        # return => mod total by number of buckets
+def _hash_key(self, val):
+        """Generate the hash key."""
+        return sum(map(lambda x: ord(x), val)) % self.max_size
 
-        # return reduce(lambda a, b: a + ord(b), list(key), 0) % self.buckets
 
-        sum = 0
-        for char in key:
-            sum += ord(char)
-        return sum % self.buckets
+def set(self, key, val):
+        """Insert val into hash table."""
+        return self.buckets[self._hash_key(key)].insert({key: val})
 
-    def set(self, key, val):
-        """Create the set function."""
-        index = self._bucket_index(key)
-        bucket = self.buckets[index]
-        entry = bucket.find(lambda key_val: key_val[0] == key)
-        if entry is not None:
-            bucket.delete(entry)
-        else:
-            self.size += 1
-        bucket.append((key, val))
-        self.buckets[self.hash_key(key)] = val
 
-    def get(self, key):
+def get(self, key):
         """Return the value associated with the given key."""
         index = self._bucket_index(key)
         bucket = self.buckets[index]
@@ -47,8 +31,23 @@ class HashTable:
         if entry is not None:
             return self.buckets[self.hash_key(key)]
 
-    def remove(self, key):
-        """Create the remove function."""
-        temp = self.buckets[self.hash_key(key)]
-        self.buckets[self.hash_key(key)] = None
-        return temp
+
+def remove(self, key, dump=False):
+        """Remove bucket value."""
+        bucket = self.buckets[self._hash_key(key)]
+        current = bucket.head
+        last = current
+        while current:
+            if key in current.val.keys():
+                if dump:
+                    bucket.head = None
+                    bucket._size = 0
+                else:
+                    if last is not current:
+                        last._next = current._next
+                    else:
+                        bucket.head = current._next
+                return current.val[key]
+
+            last = current
+            current = current._next
