@@ -1,39 +1,43 @@
 class Node:
-    """node class"""
+    """Node class."""
+
     def __init__(self, val):
+        """Init for Node."""
         self.val = val
         self.right = None
         self.left = None
 
     def __repr__(self):
-        """repe function for the node class"""
+        """Return repr."""
         return '<Node Val: {}'.format(self.val)
 
     def __str__(self):
-        """return node val"""
+        """Return str."""
         return self.val
 
 
 class BST:
-    """bst class"""
+    """BST class."""
+
     def __init__(self, iter=[]):
+        """Initializer."""
         self.root = None
-        
+
         for item in iter:
             self.insert(item)
 
     def __repr__(self):
-        """return value of the node"""
+        """Return repr."""
         return '<BST Root {}>'.format(self.root.val)
 
     def __str__(self):
-        """return value of the node"""
+        """Return string."""
         return self.root.val
 
     def in_order(self, operation):
-        """in_order traversal"""
+        """In order traversal."""
         def _walk(node=None):
-            """walk finction jump from node to node"""
+            """Walk from node to node."""
             if node is None:
                 return
 
@@ -48,13 +52,13 @@ class BST:
             return False
         else:
             _walk(self.root)
-    
+
     def insert(self, val):
-        """add node to the binary tree"""
+        """Insert node to the binary tree."""
         node = Node(val)
 
         def _insert(current, node):
-            """isert node in bst"""
+            """Insert node."""
             if node.val >= current.val:
                 if current.right is None:
                     current.right = node
@@ -76,7 +80,7 @@ class BST:
             _insert(current, node)
 
     def pre_order(self, operation):
-        """preorder traversal"""
+        """Preorder traversal."""
         def _walk(node=None):
             if node is None:
                 return
@@ -87,14 +91,14 @@ class BST:
 
             if node.right is not None:
                 _walk(node.right)
-        
+
         if self.root is None:
             return False
         else:
             _walk(self.root)
-    
+
     def post_order(self, operation):
-        """postorder traversal"""
+        """Postorder traversal."""
         def _walk(node=None):
             if node.left is not None:
                 _walk(node.left)
@@ -105,7 +109,7 @@ class BST:
 
             if node is None:
                 return
-        
+
         if self.root is None:
             return False
         else:
