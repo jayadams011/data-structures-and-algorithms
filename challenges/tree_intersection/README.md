@@ -26,3 +26,6 @@ Pytest
 None
 
 ## Change log
+d487731 (HEAD -> tree_intersection, origin/tree_intersection) updated code. updated readme
+ca12a32 clean up code.
+850adf0 scaffold and starter code
