@@ -1,30 +1,32 @@
 class Node:
+    """Creates Nodes"""
+
     def __init__(self, val, next=None):
-        """init function"""
+        """Initializer."""
         self.val = val
         self._next = next
 
     def __str__(self):
-        """str representation"""
+        """Represent String."""
         return str(self.val)
-        
 
 
 class LinkedList:
-    """class for new linked lists"""
+    """New linked lists Class."""
+
     def __init__(self, iter=[]):
+        """Class Init."""
         self.head = None
         self._len = 0
-
         for item in iter:
             self.head = self.insert(item)
 
     def __len__(self):
-        """return len of the corrent object"""
+        """Find length of the current object."""
         return self._len
 
     def __str__(self):
-        """return all items from the LL"""
+        """Return items from LL."""
         lis = ''
         current = self.head
         while current:
@@ -33,15 +35,14 @@ class LinkedList:
         return lis
 
     def insert(self, val):
-        """add item to the LL"""
+        """Add item to the LL."""
         node = Node(val, self.head)
-        # self.head = Node(val, self.head)
         self.head = node
         self._len += 1
         return self.head
 
     def find(self, val):
-        """search for element and return True or false"""
+        """Search for element and return Bool."""
         if self.head is None:
             return False
         elif self.head == val:
@@ -55,17 +56,16 @@ class LinkedList:
         return False
 
     def append(self, value):
-        """append value at the end of the list"""
+        """Add value at the end of the LL."""
         current = self.head
         while current._next:
             current = current._next
         current._next = Node(value)
-        self._len += 1    
-        
+        self._len += 1
+
     def insert_before(self, value, newval):
-        """insert new node before correct"""
+        """Insert new node before current."""
         if self.head is not None:
-            # import pdb; pdb.set_trace()
             current = self.head
             if self.head == value:
                 self.head = Node(newval, self.head)
@@ -81,10 +81,9 @@ class LinkedList:
             self.head = Node(newval)
             self._len += 1
         return self.__str__
-    
+
     def insert_after(self, value, newval):
-        """insert new node after correct"""
-        # import pdb; pdb.set_trace()
+        """Insert new node after current."""
         print(str(self))
         if self.head is not None:
             current = self.head
@@ -103,9 +102,9 @@ class LinkedList:
             self.head = Node(newval)
             self._len += 1
         return self.__str__
-    
+
     def ll_kth_from_end(self, k):
-        """ find node (k) from end """
+        """Find node (k) from end."""
         if k < 0 or self._len - k < 0:
             return False
         size = len(self)
@@ -116,9 +115,9 @@ class LinkedList:
         for _ in range(index):
             node = node._next
         return node
-    
+
     def has_loop(self):
-        """mrthod will cj=heck for the loop inside LL"""
+        """Will check for loop inside LL."""
         if self.head is None:
             return False
         if self.head._next is self.head:
@@ -134,7 +133,7 @@ class LinkedList:
 
 
 def merge_lists(list1, list2):
-    """merge two linked list"""
+    """Merge two LL."""
     if len(list1) == 0:
         return list2.head
     elif len(list2) == 0:
