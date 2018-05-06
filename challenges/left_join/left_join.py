@@ -1,3 +1,7 @@
+from hash_table import HashTable
+from linked_list import LinkedList
+
+
 def left_join(hmap1, hmap2):
     """Define left join."""
     num = 0
@@ -22,4 +26,4 @@ def left_join(hmap1, hmap2):
                 end.append(temp)
         return end
     else:
-        return [x for x in hmap1.buckets if type(x) == dict] 
+        return [x for x in hmap1.buckets if type(x) == dict]

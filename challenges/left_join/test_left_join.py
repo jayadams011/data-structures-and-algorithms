@@ -4,19 +4,17 @@ from hash_table import HashTable
 from left_join import left_join
 
 
-def test_for_empty_map(table_one, empty_hash_table):
+def test_for_empty_map(small_table, empty_hash_table):
     """Test for items in second hash map."""
-    assert left_join(table_one, empty_hash_table) == [{'one': 'blue'},
-                                                      {'two': 'green'},
-                                                      {'three': 'yellow'},
-                                                      {'four': 'red'}]
+    assert left_join(small_table, empty_hash_table) == [{'John': 1234},
+     {'Jane': '123456'}, {'John': '123'}, {'Jane': 'abc'}]
 
 
-# def test_empty_tree(empty_bst, small_bst):
-#     """Tests for empty tree."""
-#     assert tree_intersection(empty_bst, small_bst) is False
+def test_if_two_tables(small_table, large_table):
+    """Test two filled tables."""
+    assert left_join(small_table, large_table) == [['yellow', 'blue', 'green'], ['gray', 'brown', 'pink'], ['black', 'red', 'orange'], ['cyan', 'puce', 'white']]
 
 
-# def test_small_bst(small_bst, big_bst):
-#     """Test correct answer."""
-#     assert tree_intersection(small_bst, big_bst) == [2, 4, 5, 6, 7]
+def test_when_first_array_is_empty(small_table, empty_hash_table):
+    """Test if first table hase no buckets."""
+    assert left_join(empty_hash_table, small_table) == []

@@ -11,47 +11,28 @@ def empty_hash_table():
 
 
 @pytest.fixture
-def table_one():
+def small_table():
     """Small table."""
-    small_table = HashTable(100)
-    small_table.set('one', 'blue')
-    small_table.set('two', 'green')
-    small_table.set('three', 'yellow')
-    small_table.set('four', 'red')
+    small_table = HashTable(10)
+    small_table.set('John', 1234)
+    small_table.set('Jane', 123456)
+    small_table.set('John', '123')
+    small_table.set('Jane', 'abc')
     return small_table
 
 
 @pytest.fixture
-def table_two():
-    """Big table."""
-    big_table = HashTable(100)
-    big_table.set('ten', 'black')
-    big_table.set('twenty', 'white')
-    big_table.set('thirty', 'purple')
-    big_table.set('forty', 'cyan')
-    big_table.set('fifty', 'gray')
-    return big_table
+def large_table():
+    """Large table."""
+    large_table = HashTable()
+    large_table.set('John', 1234)
+    large_table.set('Jane', 123456)
+    large_table.set('John', '123')
+    large_table.set('Jim', 'abc')
+    large_table.set('Jane', 123456)
+    large_table.set('Jane', '123')
+    large_table.set('Jane', 'abc')
+    return large_table
 
 
-# @pytest.fixture
-# def empty_bst():
-#     """Empty bst."""
-#     return BST()
 
-
-# @pytest.fixture
-# def small_bst():
-#     """Sm bst."""
-#     return BST([4, 3, 3.5, 2, 5, 6, 7])
-
-
-# @pytest.fixture
-# def big_bst():
-#     """Big bst."""
-#     return BST([4, 2, 2.5, -1, 5, 6, 7])
-
-
-# @pytest.fixture
-# def ss_bst():
-#     """SS bst."""
-#     return BST([1, 2, 6, 0, 7, 4, 2])
