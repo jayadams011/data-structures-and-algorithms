@@ -12,7 +12,7 @@ Write a function that accepts two hash_maps and returns a list of the key from h
 
 
 ## Assets
-![pseudocode](../../assets/repeated_word.jpg)
+![pseudocode](../../assets/left_join.jpg)
 
 
 
@@ -26,3 +26,6 @@ Pytest
 None
 
 ## Change log
+7d1bf6c (HEAD -> left_join) added code for left_join
+d662f11 add needed files from past challenges
+dc77639 scaffold
