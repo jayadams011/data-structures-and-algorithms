@@ -1,4 +1,5 @@
-"""Define function to sort and merge two arrays"""
+"""Define function to sort and merge an unsorted array"""
 
 
-def mergersort(left_arr, right_arr)
+def mergersort(arr)
+
