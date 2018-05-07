@@ -1,19 +1,13 @@
-"""Conftest."""
-
-from .hash_table import HashTable
+"""Imports."""
 import pytest
+from hash_table import HashTable
+from left_join import left_join
 
 
 @pytest.fixture
 def empty_hash_table():
-    """Empty hash table."""
+    """Make empty table."""
     return HashTable()
-
-
-@pytest.fixture
-def basic_hash_table():
-    """Not empty hash table."""
-    return HashTable(1)
 
 
 @pytest.fixture
@@ -39,3 +33,6 @@ def large_table():
     large_table.set('Jane', '123')
     large_table.set('Jane', 'abc')
     return large_table
+
+
+
