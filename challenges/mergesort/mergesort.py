@@ -1,35 +1,34 @@
 """Define function to sort and merge an unsorted array"""
 
 
-def mergersort(arr)
-"""Define sort function."""
+def mergersort(arr):
+    """Sort function."""
+    def split(arr):
+        if len(arr) <= 1:
+            return lst
 
-if len(arr) > 2:
-        mid = len(arr)//2
-        left_arr = arr[:mid]
-        right_arr = arr[mid:]
-        mergeSort(left_arr)
-        mergeSort(right_arr)
-        i = 0
-        j = 0
-        k = 0
+        mid = len(arr) // 2
+        left = arr[:middle]
+        right = arr[middle:]
 
-        while i < len(left_arr) and j < len(right_arr):
-            if left_arr[i] < right_arr[j]:
-                arr[k] = left_arr[i]
-                i = i + 1
+        left = split(left)
+        right = split(right)
+        return merge(left, right)
+
+    def merge(left, right):
+        """Define helper Function."""
+        temp = []
+        while len(left) > 0 and len(right) > 0:
+            if left[0] <= right[0]:
+                temp.append(left.pop(0))
             else:
-                arr[k] = right_arr[j]
-                j = j+1
-            k = k+1
+                temp.append(right.pop(0))
 
-        while i < len(left_arr):
-            arr[k] = left_arr[i]
-            i = i+1
-            k = k+1
+        while len(left) > 0:
+            temp.append(left.pop(0))
+        while len(right) > 0:
+            temp.append(right.pop(0))
 
-        while j < len(right_arr):
-            alist[k] = right_arr[j]
-            j = j + 1
-            k = k + 1
-        return mergesort
+        return temp
+
+    return split(arr)
