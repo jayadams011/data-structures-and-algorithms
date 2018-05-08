@@ -1,4 +1,4 @@
-# mergesort
+# Merge sort
 **Author** : Jay Adams
 **Version**: 0.2.0
 
@@ -12,7 +12,7 @@ Write a function that accepts an array of unsorted integers, and returns a sorte
 
 
 ## Assets
-![pseudocode](../../assets/left_join.jpg)
+![pseudocode](../../assets/merge_sort.jpg)
 
 
 
