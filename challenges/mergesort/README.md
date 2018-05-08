@@ -16,7 +16,7 @@ Write a function that accepts an array of unsorted integers, and returns a sorte
 
 
 
-## Architechture
+## Architechture  
 Python 3.6.4
 ENV
 Pytest
