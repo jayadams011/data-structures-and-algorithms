@@ -28,7 +28,7 @@ def mergesort(arr):
         while len(left) > 0:
             new_arr.append(left_half.pop(0))
         while len(right_half) > 0:
-            new-arr.append(right_half.pop(0))
+            new_arr.append(right_half.pop(0))
 
         return new_arr
 
