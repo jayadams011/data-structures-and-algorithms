@@ -10,7 +10,7 @@ def test_empty_selection_sort():
 
 def test_small_selection_sort():
     """Test small selection sort."""
-    assert selection_sort([1234]) == [1234]
+    assert selection_sort([1, 2, 3, 4]) == [1, 2, 3, 4]
 
 
 def test_large_selection_sort():

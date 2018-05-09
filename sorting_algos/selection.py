@@ -3,6 +3,7 @@
 
 def selection_sort(lst):
     """Set up selection sort."""
+    arr = []
     if len(arr) < 2:
         return lst
 
