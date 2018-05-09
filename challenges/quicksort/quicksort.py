@@ -1,19 +1,29 @@
 """Define quicksort finction."""
 
 
-def quicksort(data):
+def quicksort(arr):
     """Quick sort."""
-    if len(data) < 1:
-        return data
-    pivot = data[0]
-    left = []
-    right = []
-    for x in range(1, len(data)):
-        if data[x] <= pivot:
-            left.append(data[x])
-        else:
-            right.append(data[x])
-    left = quicksort(left)
-    right = quicksort(right)
-    foo = [pivot]
-    return left + foo + right
+    R = []
+    L = []
+    pivot_list = []
+
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        for i in arr:
+            if i < pivot:
+                L.append(i)
+            elif i > pivot:
+                R.append(i)
+            else:
+                pivot.append(i)
+        R = quicksort(R)
+        L = quicksort(L)
+
+    return L + pivot + R
+    
+
+
+
+
