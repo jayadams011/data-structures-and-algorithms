@@ -12,7 +12,7 @@ Write a function that accepts two binary trees and returns a set of the intersec
 
 
 ## Assets
-![pseudocode](../../assets/tree_intersection.jpg)
+![pseudocode](../../assets/quicksort.jpg)
 
 
 

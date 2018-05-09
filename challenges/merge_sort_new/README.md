@@ -1,3 +1,4 @@
+<<<<<<< HEAD:challenges/merge_sort_new/README.md
 # Merge sort
 **Author** : Jay Adams
 **Version**: 0.2.0
@@ -26,3 +27,6 @@ Pytest
 None
 
 ## Change log
+=======
+
+>>>>>>> 6aa1735e4e4806585d18d3bc964bcfd818b1915c:challenges/mergesort/README.md
