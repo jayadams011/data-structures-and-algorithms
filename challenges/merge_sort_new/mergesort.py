@@ -1,35 +1,33 @@
-"""Define function to sort and merge an unsorted array"""
+"""Define function to sort and merge an unsorted array."""
 
 
 def mergesort(arr):
+    """Define merge sort."""
+    left = arr[:len(arr)//2]
+    right = arr[len(arr)//2:]
+    if len(left) > 1:
+        left = mergesort(left)
+    if len(right) > 1:
+        right = mergesort(right)
 
-    def spilt(arr):
-        """Define split func."""
-        if len(arr) <= 1:
-            return lst
+    lst = []
+    i, j = 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            lst.append(left[i])
+            i += 1
+        elif left[i] > right[j]:
+            lst.append(right[j])
+            j += 1
+        else:
+            lst.append(left[i])
+            lst.append(right[j])
+            i += 1
+            j += 1
 
-        middle = len(arr) // 2
-        left_half = arr[:middle]
-        right_half = arr[middle:]
+    for _ in range(i, len(left)):
+        lst.append(left[_])
+    for _ in range(j, len(right)):
+        lst.append(right[_])
 
-        left_half = split(left_half)
-        right_half = split(right_half)
-        return temp(left_half, right_half)
-
-    def merge(left_half, right_half):
-        """Define helper."""
-        new_arr = []
-        while len(left_half) > 0 and len(right_half) > 0:
-            if left_half[0] <= right_half[0]:
-                new_arr.append(left_half.pop(0))
-            else:
-                new_arr.append(right_half.pop(0))
-
-        while len(left) > 0:
-            new_arr.append(left_half.pop(0))
-        while len(right_half) > 0:
-            new_arr.append(right_half.pop(0))
-
-        return new_arr
-
-    return split(arr)
+    return lst
