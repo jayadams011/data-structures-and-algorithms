@@ -1,5 +1,5 @@
-"""Define function to sort and merge an unsorted array"""
 
+<<<<<<< HEAD
 
 def mergersort(arr):
     """Sort function."""
@@ -32,3 +32,5 @@ def mergersort(arr):
         return temp
 
     return split(arr)
+=======
+>>>>>>> 6aa1735e4e4806585d18d3bc964bcfd818b1915c
