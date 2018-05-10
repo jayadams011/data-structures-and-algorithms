@@ -9,12 +9,12 @@ def radix_sort(arr):
         numLen = int(math.log10(num)) + 1
         if numLen > maxLen:
             maxLen = numLen
-    buckets = [[] for i in range(0, 10)]
     for val in range(0, maxLen):
+        buckets = [[] for i in range(0, 10)]
         for number in arr:
-            buckets[num // 10**val % 10].append(num)
-        arr[:] is None
+            buckets[number // 10**val % 10].append(number)
+        arr = []
         for bucket in buckets:
-            arr.extend(bucket)
-            bucket[:] is None
+            for num in bucket:
+                arr.append(num)
     return arr
