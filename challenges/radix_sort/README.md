@@ -12,7 +12,7 @@ Write a function that accepts an array of unsorted integers, and returns a sorte
 
 
 ## Assets
-![pseudocode](../../assets/radix_sort.jpg)
+![pseudocode](../assets/radix_sort.jpg)
 
 
 
